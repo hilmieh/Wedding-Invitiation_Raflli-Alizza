@@ -336,7 +336,7 @@
         };
 
         const CoverPage = ({ onOpen, guestName }) => {
-            const salutation = guestName ? (guestName.toLowerCase().includes('saudari') || guestName.toLowerCase().includes('ibu') || guestName.toLowerCase().includes('ny') ? 'Saudari' : guestName.toLowerCase().includes('saudara') || guestName.toLowerCase().includes('bapak') || guestName.toLowerCase().includes('tn') ? 'Saudara' : 'Bapak/Ibu/Saudara/i') : 'Bapak/Ibu/Saudara/i   ';
+            const salutation = guestName ? (guestName.toLowerCase().includes('saudari') || guestName.toLowerCase().includes('ibu') || guestName.toLowerCase().includes('ny') ? 'Saudari' : guestName.toLowerCase().includes('saudara') || guestName.toLowerCase().includes('bapak') || guestName.toLowerCase().includes('tn') ? 'Saudara' : 'Bapak/Ibu/Saudara/') : 'Bapak/Ibu/Saudara/   ';
             return (
                 <motion.div className="cover-overlay flex flex-col bg-prewedding-cover" initial={{ opacity: 1 }} exit={{ opacity: 0, y: '-100%' }} transition={{ duration: 0.8, ease: [0.4, 0, 0.2, 1] }}>
                     <div className="watercolor-flower flower-1" /><div className="watercolor-flower flower-2" /><div className="watercolor-flower flower-3" /><div className="watercolor-flower flower-4" />
