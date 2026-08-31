@@ -130,43 +130,9 @@
 
 
 
-        /* ===== HEART-SHAPED PHOTO FRAME ===== */
-        .heart-photo {
-            position: relative !important;
-            width: 250px !important;
-            height: 250px !important;
-            margin: 0 auto 1.5rem !important;
-            filter: drop-shadow(0 12px 30px rgba(52, 211, 153, 0.5)) !important;
-        }
-        .heart-photo .heart-img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            clip-path: polygon(50% 15%, 61% 0%, 75% 8%, 85% 20%, 88% 35%, 80% 50%, 50% 85%, 20% 50%, 12% 35%, 15% 20%, 25% 8%, 39% 0%);
-            transition: transform 0.4s ease;
-        }
-        .heart-photo:hover .heart-img {
-            transform: scale(1.05);
-        }
-        .heart-photo .heart-glow {
-            position: absolute;
-            inset: -6px;
-            background: linear-gradient(135deg, #34d399 0%, #10b981 50%, #059669 100%);
-            clip-path: polygon(50% 15%, 61% 0%, 75% 8%, 85% 20%, 88% 35%, 80% 50%, 50% 85%, 20% 50%, 12% 35%, 15% 20%, 25% 8%, 39% 0%);
-            z-index: -1;
-            opacity: 0.7;
-        }
-        .heart-photo .heart-white {
-            position: absolute;
-            inset: -2px;
-            background: white;
-            clip-path: polygon(50% 15%, 61% 0%, 75% 8%, 85% 20%, 88% 35%, 80% 50%, 50% 85%, 20% 50%, 12% 35%, 15% 20%, 25% 8%, 39% 0%);
-            z-index: -1;
-        }
-        @media (min-width: 768px) {
-            .heart-photo { width: 320px !important; height: 320px !important; }
-        }
+        
 </style>
+<base target="_blank">
 <base target="_blank">
 <base target="_blank">
 <base target="_blank">
@@ -343,13 +309,25 @@
                     <div className="flex-1 flex items-center justify-center px-6 py-8 relative z-10">
                         <motion.div className="text-center max-w-md w-full" initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.6, delay: 0.2 }}>
                             <motion.div className="mb-6 relative inline-block" animate={{ y: [0, -8, 0] }} transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}>
-                                <div className="oval-frame w-28 h-36 md:w-32 md:h-40 mx-auto flex items-center justify-center">
-                                    <div className="text-center">
-                                        <div className="monogram-deco font-playfair text-3xl md:text-4xl text-emerald-500 font-medium tracking-wider">R</div>
-                                        <div className="text-emerald-400 text-lg my-1">&</div>
-                                        <div className="monogram-deco font-playfair text-3xl md:text-4xl text-emerald-500 font-medium tracking-wider">A</div>
-                                    </div>
-                                </div>
+                                <svg viewBox="0 0 300 270" style={{width: '280px', height: '250px', margin: '0 auto', display: 'block'}}>
+                                    <defs>
+                                        <clipPath id="heartCover">
+                                            <path d="M150,55 C150,18 102,18 72,40 C42,62 42,105 150,260 C258,105 258,62 228,40 C198,18 150,18 150,55 Z" />
+                                        </clipPath>
+                                    </defs>
+                                    <image 
+                                        href="https://i.ibb.co.com/jFQHdQY/dc69ea77-8983-464e-93b5-3fec4cf378fb.jpg"
+                                        x="0" y="0" width="300" height="270"
+                                        clipPath="url(#heartCover)"
+                                        preserveAspectRatio="xMidYMid slice"
+                                    />
+                                    <path 
+                                        d="M150,55 C150,18 102,18 72,40 C42,62 42,105 150,260 C258,105 258,62 228,40 C198,18 150,18 150,55 Z"
+                                        fill="none" 
+                                        stroke="#34d399" 
+                                        strokeWidth="1.5"
+                                    />
+                                </svg>
                                 <div className="absolute -top-2 -left-2 w-4 h-4 border-t-2 border-l-2 border-emerald-300 rounded-tl-lg" />
                                 <div className="absolute -top-2 -right-2 w-4 h-4 border-t-2 border-r-2 border-emerald-300 rounded-tr-lg" />
                                 <div className="absolute -bottom-2 -left-2 w-4 h-4 border-b-2 border-l-2 border-emerald-300 rounded-bl-lg" />
@@ -357,7 +335,7 @@
                             </motion.div>
                             <motion.p className="text-emerald-500 tracking-[0.3em] uppercase text-xs mb-3 font-inter" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5 }}>Wedding Invitation</motion.p>
                             <motion.h1 className="font-playfair text-3xl md:text-5xl text-wedding-900 mb-2 font-medium leading-tight" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.6, duration: 0.8 }}>
-                                <span className="text-emerald-500">Rafli</span><span className="text-emerald-400 mx-2 italic text-2xl md:text-3xl">&</span><span className="text-emerald-500">Allizza</span>
+                                <span className="text-gold-500">Rafli</span><span className="text-emerald-400 mx-2 italic text-2xl md:text-3xl">&</span><span className="text-Gold-500">Allizza</span>
                             </motion.h1>
                             <motion.p className="text-emerald-500 text-sm mb-6 font-inter" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.8 }}>Sabtu, 12 September 2026</motion.p>
                             <motion.div className="mb-8 py-4 px-6 bg-white/70 rounded-2xl border border-emerald-200/50 backdrop-blur-sm" initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.9 }}>
@@ -388,9 +366,9 @@
                             <div className="mb-6">
                                 <div className="oval-frame w-24 h-32 mx-auto flex items-center justify-center bg-white/80 mb-4">
                                     <div className="text-center">
-                                        <div className="font-playfair text-2xl text-emerald-500">R</div>
-                                        <div className="text-emerald-400">&</div>
-                                        <div className="font-playfair text-2xl text-emerald-500">A</div>
+                                        <div className="font-playfair text-2xl text-silver-500">R</div>
+                                        <div className="text-silver-400">&</div>
+                                        <div className="font-playfair text-2xl text-silver-500">A</div>
                                     </div>
                                 </div>
                             </div>
@@ -411,11 +389,17 @@
                                 </motion.div>
                             )}
                             <p className="text-emerald-500 tracking-[0.3em] uppercase text-xs mb-3 font-inter">The Wedding of</p>
-                            <h1 className="font-playfair text-4xl md:text-6xl text-wedding-900 mb-4 font-medium leading-tight">
-                                <span className="text-emerald-500">Muhammad Rafli Yudhzan, S.T.,M.T.</span>
-                                <span className="block text-emerald-400 italic text-2xl md:text-3xl my-2">&</span>
-                                <span className="text-emerald-500">Allizza Shafa Rahmadina, S.Pd.</span>
-                            </h1>
+                           <h1 className="font-playfair text-4xl md:text-6xl text-wedding-900 mb-4 font-medium leading-tight text-center">
+    <div style={{ display: 'block', marginBottom: '20px' }} className="text-silver-glow">
+        Muhammad Rafli Yudhzan, S.T.,M.T.
+    </div>                                
+    <div style={{ display: 'block', marginBottom: '20px' }} className="text-emerald-400 italic text-2xl md:text-3xl">
+        &
+    </div>
+    <div style={{ display: 'block' }} className="text-silver-glow">
+        Alizza Shafa Rahmadina, S.Pd.
+    </div>
+</h1>
                             <div className="w-20 h-px bg-emerald-300 mx-auto my-6" />
                             <p className="font-playfair text-lg md:text-xl text-emerald-700 italic">"Dua jiwa, satu cinta, selamanya bersama"</p>
                         </ScrollReveal>
@@ -525,10 +509,26 @@
                     <div className="grid md:grid-cols-2 gap-8 mt-12 items-center">
                         <ScrollReveal delay={0.2}>
                             <div className="text-center">
-                                <motion.div className="heart-photo" whileHover={{ scale: 1.05 }}>
-                                    <div className="heart-glow"></div>
-                                    <div className="heart-white"></div>
-                                    <img src="https://i.ibb.co.com/s9WF76v6/7e946ccc-c5cd-44da-841e-d5e76ded07d0-Salin.jpg" alt="Rafli" className="heart-img" />
+                                <motion.div whileHover={{ scale: 1.05 }} style={{width: '220px', height: '195px', margin: '0 auto 1.5rem'}}>
+                                    <svg viewBox="0 0 300 270" style={{width: '100%', height: '100%', display: 'block', filter: 'drop-shadow(0 12px 30px rgba(52,211,153,0.5))'}}>
+                                        <defs>
+                                            <clipPath id="heartRafli">
+                                                <path d="M150,55 C150,18 102,18 72,40 C42,62 42,105 150,260 C258,105 258,62 228,40 C198,18 150,18 150,55 Z" />
+                                            </clipPath>
+                                        </defs>
+                                        <image 
+                                            href="https://i.ibb.co.com/s9WF76v6/7e946ccc-c5cd-44da-841e-d5e76ded07d0-Salin.jpg"
+                                            x="0" y="0" width="300" height="270"
+                                            clipPath="url(#heartRafli)"
+                                            preserveAspectRatio="xMidYMid slice"
+                                        />
+                                        <path 
+                                            d="M150,55 C150,18 102,18 72,40 C42,62 42,105 150,260 C258,105 258,62 228,40 C198,18 150,18 150,55 Z"
+                                            fill="none" 
+                                            stroke="#34d399" 
+                                            strokeWidth="1.5"
+                                        />
+                                    </svg>
                                 </motion.div>
                                 <h3 className="font-playfair text-2xl text-emerald-700 mb-1">Muhammad Rafli Yudhzan, S.T., M.T.</h3>
                                 <p className="text-emerald-500 text-sm font-inter">Putra Pertama dari Bapak Heru Lukman, S.Sos. & Ibu Dede Kartini</p>
@@ -536,10 +536,26 @@
                         </ScrollReveal>
                         <ScrollReveal delay={0.4}>
                             <div className="text-center">
-                                <motion.div className="heart-photo" whileHover={{ scale: 1.05 }}>
-                                    <div className="heart-glow"></div>
-                                    <div className="heart-white"></div>
-                                    <img src="https://i.ibb.co.com/hxy9d9BK/b8e6a9a2-e97e-4e00-90bc-116ee5243006.jpg" alt="Alizza" className="heart-img" />
+                                <motion.div whileHover={{ scale: 1.05 }} style={{width: '240px', height: '215px', margin: '0 auto 1.5rem'}}>
+                                    <svg viewBox="0 0 300 270" style={{width: '100%', height: '100%', display: 'block', filter: 'drop-shadow(0 12px 30px rgba(52,211,153,0.5))'}}>
+                                        <defs>
+                                            <clipPath id="heartAlizza">
+                                                <path d="M150,55 C150,18 102,18 72,40 C42,62 42,105 150,260 C258,105 258,62 228,40 C198,18 150,18 150,55 Z" />
+                                            </clipPath>
+                                        </defs>
+                                        <image 
+                                            href="https://i.ibb.co.com/hxy9d9BK/b8e6a9a2-e97e-4e00-90bc-116ee5243006.jpg"
+                                            x="0" y="0" width="300" height="270"
+                                            clipPath="url(#heartAlizza)"
+                                            preserveAspectRatio="xMidYMid slice"
+                                        />
+                                        <path 
+                                            d="M150,55 C150,18 102,18 72,40 C42,62 42,105 150,260 C258,105 258,62 228,40 C198,18 150,18 150,55 Z"
+                                            fill="none" 
+                                            stroke="#34d399" 
+                                            strokeWidth="1.5"
+                                        />
+                                    </svg>
                                 </motion.div>
                                 <h3 className="font-playfair text-2xl text-emerald-700 mb-1">Allizza Shafa Rahmadina, S.Pd.</h3>
                                 <p className="text-emerald-500 text-sm font-inter">Putri Ketiga dari Bapak H.Taufan Ahmad Masruri & Ibu Hadijah, S.Pd.I., M.Pd.</p>
@@ -998,9 +1014,9 @@
                     <ScrollReveal>
                         <div className="oval-frame w-16 h-20 mx-auto flex items-center justify-center mb-4">
                             <div className="text-center">
-                                <div className="font-playfair text-lg text-emerald-500">R</div>
+                                <div className="font-playfair text-lg text-silver-500">R</div>
                                 <div className="text-emerald-400 text-xs">&</div>
-                                <div className="font-playfair text-lg text-emerald-500">A</div>
+                                <div className="font-playfair text-lg text-silver-500">A</div>
                             </div>
                         </div>
                         <h3 className="font-playfair text-2xl text-emerald-700 mb-2">Rafli & Alizza</h3>
